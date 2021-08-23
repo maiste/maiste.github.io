@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+
+  <link rel="stylesheet" href="https://maiste.github.io/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://maiste.github.io/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://maiste.github.io/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://maiste.github.io/assets/apple-touch-icon.png">
+
+  
+    <link type="application/atom+xml" rel="alternate" href="https://maiste.github.io/atom.xml" title="Maiste [mɑːïsté]" />
+  
+
+  
+
+  
+  
+</head>
+
+<body>
+  
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="https://maiste.github.io">
+        <h2 class="nav-title">Maiste [mɑːïsté]</h2>
+      </a>
+      <ul>
+        
+          
+            <li><a href="https://maiste.github.io">Blog</a></li>
+          
+            <li><a href="https://maiste.github.io/data">Data</a></li>
+          
+            <li><a href="https://maiste.github.io/about">About</a></li>
+          
+            <li><a href="https://maiste.github.io/tags">Tags</a></li>
+          
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+  <main>
+    
+<div class="post">
+	<div class="post-info">
+	</div>
+	<h1 class="post-title">Vim</h1>
+	<div class="post-line"></div>
+	<h2 id="shortcuts">Shortcuts</h2>
+<ul>
+<li>space =&gt; Leader key</li>
+<li>jk / kj =&gt; Exit mode</li>
+</ul>
+<h3 id="par-defaut">Par défaut</h3>
+<ul>
+<li>&lt;c-<direction>&gt; =&gt; Change windows</li>
+<li>&lt;M-<direction>&gt; =&gt; Change dimensions</li>
+<li>&lt;TAB&gt;           =&gt; Change buffer</li>
+<li>&lt;S-TAB&gt;         =&gt; Change buffer from back</li>
+<li>&lt;leader&gt;bd      =&gt; Delete buffer</li>
+<li>&lt;leader&gt;ss      =&gt; Stop research</li>
+<li>&lt;c-a&gt;           =&gt; Decrement a number</li>
+<li>&lt;c-x&gt;           =&gt; Increment a number</li>
+<li>Macros:
+<ul>
+<li>q&lt;name&gt;&lt;macro&gt;q =&gt; record</li>
+<li>&lt;nombre&gt;@&lt;name&gt; =&gt; call</li>
+</ul>
+</li>
+</ul>
+<h3 id="vim-surrounding">Vim-surrounding</h3>
+<ul>
+<li>cs&lt;symbole&gt;&lt;new symbole&gt; =&gt; Change surrounding</li>
+<li>ds<symbole>              =&gt; Delete surrounding</li>
+<li>ys =&gt; you surround
+<ul>
+<li>ysiw&lt;symbole&gt;  =&gt; Surround word</li>
+<li>yss&lt;symbole&gt;   =&gt; Surround line</li>
+</ul>
+</li>
+<li><strong>VISUAL</strong>:
+<ul>
+<li>S&lt;symbole&gt; =&gt; Surround selection</li>
+</ul>
+</li>
+</ul>
+<h3 id="nerdcommenter">Nerdcommenter</h3>
+<ul>
+<li>&lt;leader&gt;cc =&gt; Comment</li>
+<li>&lt;leader&gt;ci =&gt; Inverse comment / uncomment</li>
+</ul>
+<h3 id="tabular">Tabular</h3>
+<ul>
+<li><strong>VISUAL</strong>:
+<ul>
+<li>&lt;leader&gt;t=          =&gt; Tabular on =</li>
+<li>&lt;leader&gt;tp&lt;pattern&gt; =&gt; Tabular on pattern</li>
+</ul>
+</li>
+</ul>
+<h3 id="quick-scope">Quick-scope</h3>
+<ul>
+<li>f&lt;char&gt; =&gt; Move forward to character</li>
+<li>F&lt;char&gt; =&gt; Move backward to character</li>
+</ul>
+<h3 id="fzf">FZF</h3>
+<ul>
+<li>&lt;leader&gt;ff =&gt; Walk through git files</li>
+<li>&lt;leader&gt;fg =&gt; Walk through code</li>
+<li>&lt;leader&gt;b =&gt; Walk through buffers</li>
+</ul>
+<h3 id="ncm2">NCM2</h3>
+<ul>
+<li>&lt;c-e&gt; =&gt; Expand snippets</li>
+<li>&lt;c-j&gt; =&gt; Up in snippets</li>
+<li>&lt;c-k&gt; =&gt; Down in snippets</li>
+<li>&lt;c-c&gt; =&gt; Cancel</li>
+<li>&lt;CR&gt;  =&gt; Apply</li>
+<li>&lt;TAB&gt; =&gt; Up</li>
+<li>&lt;S-TAB&gt; =&gt; Down</li>
+</ul>
+<h3 id="lsp">LSP</h3>
+<ul>
+<li>&lt;leader&gt;ld =&gt; Go to definitions</li>
+<li>&lt;leader&gt;lr =&gt; Rename</li>
+<li>&lt;leader&gt;lf =&gt; Format</li>
+<li>&lt;leader&gt;lt =&gt; Go to type definition</li>
+<li>&lt;leader&gt;lx =&gt; Go to the reference</li>
+<li>&lt;leader&gt;la =&gt; Change workspace</li>
+<li>&lt;leader&gt;lc =&gt; Completion</li>
+<li>&lt;leader&gt;lh =&gt; Object informations</li>
+<li>&lt;leader&gt;ls =&gt; Document symbols</li>
+<li>&lt;leader&gt;lm =&gt; Display menu</li>
+</ul>
+<h3 id="mardown">Mardown</h3>
+<ul>
+<li>&lt;leader&gt;md =&gt; Show markdown</li>
+</ul>
+
+</div>
+<div class="pagination">
+	<a href="#" class="top">Top</a>
+</div>
+
+  </main>
+
+  
+  <footer>
+    <span>&copy; <time datetime="2021-08-23T07:29:53.262415774+00:00">2020-2021</time> Maiste. <a href="https://www.getzola.org">Zola</a> with <a href="https://github.com/aaranxu/tale-zola">Tala-Zola</a> theme.</span>
+  </footer>
+  
+</body>
+</html>

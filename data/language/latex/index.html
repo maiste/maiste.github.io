@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+
+  <link rel="stylesheet" href="https://maiste.github.io/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://maiste.github.io/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://maiste.github.io/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://maiste.github.io/assets/apple-touch-icon.png">
+
+  
+    <link type="application/atom+xml" rel="alternate" href="https://maiste.github.io/atom.xml" title="Maiste [mɑːïsté]" />
+  
+
+  
+
+  
+  
+</head>
+
+<body>
+  
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="https://maiste.github.io">
+        <h2 class="nav-title">Maiste [mɑːïsté]</h2>
+      </a>
+      <ul>
+        
+          
+            <li><a href="https://maiste.github.io">Blog</a></li>
+          
+            <li><a href="https://maiste.github.io/data">Data</a></li>
+          
+            <li><a href="https://maiste.github.io/about">About</a></li>
+          
+            <li><a href="https://maiste.github.io/tags">Tags</a></li>
+          
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+  <main>
+    
+<div class="post">
+	<div class="post-info">
+	</div>
+	<h1 class="post-title">LaTex</h1>
+	<div class="post-line"></div>
+	<h2 id="installation-of-latex-and-minted-on-ubuntu">Installation of latex and minted on Ubuntu</h2>
+<ul>
+<li>LaTex Installation:</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;"> </span><span style="color:#e45649;">sudo</span><span style="color:#383a42;"> apt install texlive texlive-latex-extra texlive-lang-french texmaker
+</span></code></pre>
+<ul>
+<li>Minted dependencies:</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;"> </span><span style="color:#e45649;">sudo</span><span style="color:#383a42;"> apt install  python3-pygments
+</span></code></pre>
+<ul>
+<li>In TexMaker, go in <code>Options &gt; Configurer Texmaker</code> and add the following line
+in <code>PdfLaTex</code>:</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<code><span style="color:#383a42;"> pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex
+</span></code></pre>
+<ul>
+<li>Minted example:</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<code class="language-latex" data-lang="latex"><span style="color:#383a42;">  </span><span style="color:#a626a4;">\begin</span><span style="color:#383a42;">{minted}{python}
+  </span><span style="color:#a626a4;">import </span><span style="color:#383a42;">numpy </span><span style="color:#a626a4;">as </span><span style="color:#383a42;">np
+
+  </span><span style="color:#a626a4;">def </span><span style="color:#0184bc;">incmatrix</span><span style="color:#383a42;">(</span><span style="color:#e45649;">genl1</span><span style="color:#383a42;">,</span><span style="color:#e45649;">genl2</span><span style="color:#383a42;">):
+      m </span><span style="color:#a626a4;">= </span><span style="color:#0184bc;">len</span><span style="color:#383a42;">(genl1)
+      n </span><span style="color:#a626a4;">= </span><span style="color:#0184bc;">len</span><span style="color:#383a42;">(genl2)
+      M </span><span style="color:#a626a4;">= </span><span style="color:#c18401;">None </span><span style="color:#a0a1a7;">#to become the incidence matrix
+      </span><span style="color:#e45649;">VT </span><span style="color:#a626a4;">= </span><span style="color:#383a42;">np.</span><span style="color:#e45649;">zeros</span><span style="color:#383a42;">((n</span><span style="color:#a626a4;">*</span><span style="color:#383a42;">m,</span><span style="color:#c18401;">1</span><span style="color:#383a42;">), int)  </span><span style="color:#a0a1a7;">#dummy variable
+      </span><span style="color:#a626a4;">return </span><span style="color:#383a42;">M
+  </span><span style="color:#a626a4;">\end</span><span style="color:#383a42;">{minted}
+</span></code></pre>
+<p>More examples in: <a href="https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted">here</a></p>
+<h2 id="installation-of-the-metropolis-theme">Installation of the Metropolis theme</h2>
+<ul>
+<li>Install dependencies:</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">sudo</span><span style="color:#383a42;"> apt install latexmk texlive-xetex
+</span></code></pre>
+<ul>
+<li>Install Metropolis with Git:</li>
+</ul>
+<p>Link for the git repo: <a href="https://github.com/matze/mtheme">here</a></p>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#0184bc;">cd</span><span style="color:#383a42;"> /tmp
+  </span><span style="color:#e45649;">git</span><span style="color:#383a42;"> clone git@github.com:matze/mtheme.git
+  </span><span style="color:#0184bc;">cd</span><span style="color:#383a42;"> mtheme/
+  </span><span style="color:#e45649;">make</span><span style="color:#383a42;"> sty </span><span style="color:#a626a4;">&amp;&amp; </span><span style="color:#e45649;">make</span><span style="color:#383a42;"> install
+</span></code></pre>
+<p>Then you just need to change your latex with <code>\usetheme{metropolis}</code>.
+To use <strong>minted</strong> with Beamer, remember to add the <code>[fragile]</code> keyword:</p>
+<pre style="background-color:#fafafa;">
+<code class="language-latex" data-lang="latex"><span style="color:#383a42;">  </span><span style="color:#a626a4;">\begin</span><span style="color:#383a42;">{frame}[fragile]{Frame}
+    </span><span style="color:#a626a4;">\begin</span><span style="color:#383a42;">{minted}{c}
+    </span><span style="color:#a626a4;">int </span><span style="color:#0184bc;">main</span><span style="color:#383a42;">() {
+      </span><span style="color:#0184bc;">printf</span><span style="color:#383a42;">(</span><span style="color:#50a14f;">&quot;hello, world&quot;</span><span style="color:#383a42;">);
+      </span><span style="color:#a626a4;">return </span><span style="color:#c18401;">0</span><span style="color:#383a42;">;
+    }
+    </span><span style="color:#a626a4;">\end</span><span style="color:#383a42;">{minted}
+  </span><span style="color:#a626a4;">\end</span><span style="color:#383a42;">{frame}
+</span></code></pre><h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.learnlatex.org/en/">LearnLaTex</a>: Learn LaTex</li>
+<li><a href="http://detexify.kirelabs.org/classify.html">Detexify</a>: Detect LaTex symbols</li>
+<li><a href="https://tex.stackexchange.com/questions/34175/how-do-i-create-a-latex-package">Tex Stackoverflow</a>: Write a LaTex package</li>
+</ul>
+
+</div>
+<div class="pagination">
+	<a href="#" class="top">Top</a>
+</div>
+
+  </main>
+
+  
+  <footer>
+    <span>&copy; <time datetime="2021-08-23T07:29:53.264194885+00:00">2020-2021</time> Maiste. <a href="https://www.getzola.org">Zola</a> with <a href="https://github.com/aaranxu/tale-zola">Tala-Zola</a> theme.</span>
+  </footer>
+  
+</body>
+</html>

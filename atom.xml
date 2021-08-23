@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Maiste [mɑːïsté]</title>
+	<subtitle>Another useless blog you might find useful.</subtitle>
+	<link href="https://maiste.github.io/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://maiste.github.io"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2021-08-20T00:00:00+00:00</updated>
+	<id>https://maiste.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>First Post!</title>
+		<published>2021-08-20T00:00:00+00:00</published>
+		<updated>2021-08-20T00:00:00+00:00</updated>
+		<link href="https://maiste.github.io/first/" type="text/html"/>
+		<id>https://maiste.github.io/first/</id>
+		<content type="html">&lt;p&gt;If you are here for the first time, I welcome you in this knowledge temple !
+I created this blog to share my knowledge database, sometimes express my
+point of view, improve my English skills and build a place where I can just
+share what I want.&lt;&#x2F;p&gt;
+&lt;p&gt;It&#x27;s always nice to have some feedback so you can reach me on this &lt;a href=&quot;mailto:etienne@maiste.fr&quot;&gt;mail&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;In the following months, I will do my best to improve the content and the quality
+of this website.&lt;&#x2F;p&gt;
+&lt;p&gt;Hope you&#x27;ll enjoy it!&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

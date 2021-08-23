@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+
+  <link rel="stylesheet" href="https://maiste.github.io/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://maiste.github.io/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://maiste.github.io/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://maiste.github.io/assets/apple-touch-icon.png">
+
+  
+    <link type="application/atom+xml" rel="alternate" href="https://maiste.github.io/atom.xml" title="Maiste [mɑːïsté]" />
+  
+
+  
+
+  
+  
+</head>
+
+<body>
+  
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="https://maiste.github.io">
+        <h2 class="nav-title">Maiste [mɑːïsté]</h2>
+      </a>
+      <ul>
+        
+          
+            <li><a href="https://maiste.github.io">Blog</a></li>
+          
+            <li><a href="https://maiste.github.io/data">Data</a></li>
+          
+            <li><a href="https://maiste.github.io/about">About</a></li>
+          
+            <li><a href="https://maiste.github.io/tags">Tags</a></li>
+          
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+  <main>
+    
+<div class="post">
+	<div class="post-info">
+	</div>
+	<h1 class="post-title">GPG</h1>
+	<div class="post-line"></div>
+	<h3 id="list-keys">List keys</h3>
+<ul>
+<li>Public:</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">gpg --list-keys
+</span></code></pre>
+<ul>
+<li>Secret:</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">gpg --list-secret-keys
+</span></code></pre><h3 id="import-a-key">Import a key</h3>
+<ul>
+<li>From a file:</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">gpg --import </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">name</span><span style="color:#a626a4;">&gt;</span><span style="color:#383a42;">.key
+</span></code></pre>
+<ul>
+<li>From a server:</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">gpg --keyserver </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">server</span><span style="color:#a626a4;">&gt; </span><span style="color:#383a42;">--search-keys </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">mail</span><span style="color:#a626a4;">&gt;
+</span></code></pre><h3 id="check-footprint">Check footprint</h3>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">gpg --fingerprint </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">mail</span><span style="color:#a626a4;">&gt;
+</span></code></pre><h3 id="sign-with-a-key">Sign with a key</h3>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">gpg --sign-key </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">mail</span><span style="color:#a626a4;">&gt;
+</span></code></pre><h3 id="refresh-a-key-server">Refresh a key server</h3>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">gpg --keyserver</span><span style="color:#383a42;"> pgp.mit.edu</span><span style="color:#e45649;"> --refresh-keys
+</span></code></pre><h3 id="share-your-public-key">Share your public key</h3>
+<ul>
+<li>With a file:</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">gpg --output </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">path/name</span><span style="color:#a626a4;">&gt;</span><span style="color:#383a42;">.key</span><span style="color:#e45649;"> --armor --export </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">mail</span><span style="color:#a626a4;">&gt;
+</span></code></pre>
+<ul>
+<li>On a server:</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">gpg --send-keys --keyserver </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">server</span><span style="color:#a626a4;">&gt; &lt;</span><span style="color:#383a42;">fingerprint</span><span style="color:#a626a4;">&gt;
+</span></code></pre><h3 id="generate-a-revocation-certificat">Generate a revocation certificat</h3>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">gpg --output </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">path/name</span><span style="color:#a626a4;">&gt;</span><span style="color:#383a42;">.crt</span><span style="color:#e45649;"> --gen-revoke </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">mail</span><span style="color:#a626a4;">&gt;
+</span><span style="color:#383a42;">  chmod 600 </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">path/certificat</span><span style="color:#a626a4;">&gt;
+</span></code></pre><h3 id="revoke-your-key">Revoke your key</h3>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">gpg --import </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">certificat</span><span style="color:#a626a4;">&gt;
+</span><span style="color:#383a42;">  gpg</span><span style="color:#e45649;"> --keyserver</span><span style="color:#383a42;"> pgp.mit.edu</span><span style="color:#e45649;"> --search-keys</span><span style="color:#383a42;"> key-ID
+  </span><span style="color:#e45649;">gpg --keyserver</span><span style="color:#383a42;"> pgp.mit.edu</span><span style="color:#e45649;"> --send-keys</span><span style="color:#383a42;"> key-ID
+</span></code></pre><h3 id="encrypt-a-file">Encrypt a file</h3>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">gpg --encrypt --sign --armor -r </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">mail</span><span style="color:#a626a4;">&gt; &lt;</span><span style="color:#383a42;">file</span><span style="color:#a626a4;">&gt;
+</span></code></pre><h3 id="decrypt-a-file">Decrypt a file</h3>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">gpg --decrypt </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">file</span><span style="color:#a626a4;">&gt; &gt; &lt;</span><span style="color:#383a42;">output</span><span style="color:#a626a4;">&gt;
+</span></code></pre>
+</div>
+<div class="pagination">
+	<a href="#" class="top">Top</a>
+</div>
+
+  </main>
+
+  
+  <footer>
+    <span>&copy; <time datetime="2021-08-23T07:29:53.262899177+00:00">2020-2021</time> Maiste. <a href="https://www.getzola.org">Zola</a> with <a href="https://github.com/aaranxu/tale-zola">Tala-Zola</a> theme.</span>
+  </footer>
+  
+</body>
+</html>

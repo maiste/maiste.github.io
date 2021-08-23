@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+
+  <link rel="stylesheet" href="https://maiste.github.io/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://maiste.github.io/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://maiste.github.io/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://maiste.github.io/assets/apple-touch-icon.png">
+
+  
+    <link type="application/atom+xml" rel="alternate" href="https://maiste.github.io/atom.xml" title="Maiste [mɑːïsté]" />
+  
+
+  
+
+  
+  
+</head>
+
+<body>
+  
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="https://maiste.github.io">
+        <h2 class="nav-title">Maiste [mɑːïsté]</h2>
+      </a>
+      <ul>
+        
+          
+            <li><a href="https://maiste.github.io">Blog</a></li>
+          
+            <li><a href="https://maiste.github.io/data">Data</a></li>
+          
+            <li><a href="https://maiste.github.io/about">About</a></li>
+          
+            <li><a href="https://maiste.github.io/tags">Tags</a></li>
+          
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+  <main>
+    
+<div class="post">
+	<div class="post-info">
+	</div>
+	<h1 class="post-title">Docker</h1>
+	<div class="post-line"></div>
+	<h2 id="connect-to-hubdocker">Connect to Hubdocker</h2>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">docker</span><span style="color:#383a42;"> login</span><span style="color:#e45649;"> --username </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">user</span><span style="color:#a626a4;">&gt;
+</span></code></pre><h2 id="pull-an-image">Pull an image</h2>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">docker</span><span style="color:#383a42;"> pull </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">image</span><span style="color:#a626a4;">&gt;</span><span style="color:#383a42;">:</span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">tag</span><span style="color:#a626a4;">&gt;
+</span></code></pre><h2 id="push-an-image">Push an image</h2>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">docker</span><span style="color:#383a42;"> push </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">user</span><span style="color:#a626a4;">&gt;</span><span style="color:#383a42;">:tag
+</span></code></pre><h2 id="launch-a-container">Launch a container</h2>
+<ul>
+<li>Intractif mode:</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">docker</span><span style="color:#383a42;"> run</span><span style="color:#e45649;"> -it --name </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">nom</span><span style="color:#a626a4;">&gt; </span><span style="color:#383a42;">-v </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">volume-local</span><span style="color:#a626a4;">&gt;</span><span style="color:#383a42;">:</span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">volume-conteneur</span><span style="color:#a626a4;">&gt; </span><span style="color:#383a42;">\
+             </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">image</span><span style="color:#a626a4;">&gt;</span><span style="color:#383a42;">:</span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">tag</span><span style="color:#a626a4;">&gt;
+</span></code></pre>
+<ul>
+<li>Deamon mode:</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">docker</span><span style="color:#383a42;"> run</span><span style="color:#e45649;"> --rm -d --name </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">nom</span><span style="color:#a626a4;">&gt; </span><span style="color:#383a42;">-v </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">volume-local</span><span style="color:#a626a4;">&gt;</span><span style="color:#383a42;">:</span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">volume-conteneur</span><span style="color:#a626a4;">&gt; </span><span style="color:#383a42;">\
+</span><span style="color:#e45649;">             -p </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">host-port</span><span style="color:#a626a4;">&gt;</span><span style="color:#383a42;">:</span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">conteneur-port</span><span style="color:#a626a4;">&gt;&lt;</span><span style="color:#383a42;">image</span><span style="color:#a626a4;">&gt;</span><span style="color:#383a42;">:</span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">tag</span><span style="color:#a626a4;">&gt;
+</span></code></pre><h2 id="connect-to-a-running-container">Connect to a running container</h2>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">	</span><span style="color:#e45649;">docker</span><span style="color:#383a42;"> exec</span><span style="color:#e45649;"> -it </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">tag</span><span style="color:#a626a4;">&gt; &lt;</span><span style="color:#383a42;">command</span><span style="color:#a626a4;">&gt;
+</span></code></pre><h2 id="get-the-container-logs">Get the container logs</h2>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">docker</span><span style="color:#383a42;"> logs </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">name ou id</span><span style="color:#a626a4;">&gt;
+</span></code></pre><h2 id="stop-a-containeur">Stop a containeur</h2>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">docker</span><span style="color:#383a42;"> stop </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">name</span><span style="color:#a626a4;">&gt;
+</span></code></pre><h2 id="save-docker-images">Save docker images</h2>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">docker</span><span style="color:#383a42;"> commit</span><span style="color:#e45649;"> -p </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">ID</span><span style="color:#a626a4;">&gt;</span><span style="color:#383a42;"> tag_name
+  </span><span style="color:#e45649;">docker</span><span style="color:#383a42;"> save</span><span style="color:#e45649;"> -o </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">name</span><span style="color:#a626a4;">&gt;</span><span style="color:#383a42;">.tar </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">tag_image</span><span style="color:#a626a4;">&gt;
+</span></code></pre><h2 id="load-a-container-from-a-save">Load a container from a save</h2>
+<pre style="background-color:#fafafa;">
+<code class="language-sh" data-lang="sh"><span style="color:#383a42;">  </span><span style="color:#e45649;">docker</span><span style="color:#383a42;"> load</span><span style="color:#e45649;"> -i </span><span style="color:#a626a4;">&lt;</span><span style="color:#383a42;">name</span><span style="color:#a626a4;">&gt;</span><span style="color:#383a42;">.tar
+</span></code></pre><h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://github.com/hexops/dockerfile">Good practises</a></li>
+</ul>
+
+</div>
+<div class="pagination">
+	<a href="#" class="top">Top</a>
+</div>
+
+  </main>
+
+  
+  <footer>
+    <span>&copy; <time datetime="2021-08-23T07:29:53.262180772+00:00">2020-2021</time> Maiste. <a href="https://www.getzola.org">Zola</a> with <a href="https://github.com/aaranxu/tale-zola">Tala-Zola</a> theme.</span>
+  </footer>
+  
+</body>
+</html>
